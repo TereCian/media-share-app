@@ -1,0 +1,9 @@
+<form id="userArea" hx-post="/user/updateUsername" hx-swap="outerHTML">
+    <input type="hidden" id="userUUID" name="userUUID" th:value="${userUUID}">
+    <label for="nameHolder">Username: </label>
+    <input type="text" id="nameHolder" name="username" th:value="${username}">
+    <input type="submit" value="Update Username">
+    <div th:if="${wasChanged}">
+        ✅
+    </div>
+</form>

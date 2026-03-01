@@ -1,0 +1,10 @@
+<div id="searchResult">
+    <input type="hidden" th:value="${youtubeObject.youtubeId()}" id="searchResultVideoId" name="videoId">
+    The search found the following video:<br>
+    <span th:text="${youtubeObject.fullName()}"></span>
+    <img th:src="${youtubeObject.thumbnailLink()}" width="400px">
+
+    Add this to the queue?
+    <input type="submit" hx-post="/request" hx-include="#searchResultVideoId" value="✅" hx-swap="outerHtml" hx-target="#searchResult">
+    <input type="submit" hx-get="/searchForm" value="❌" hx-swap="outerHtml" hx-target="#searchResult">
+</div>

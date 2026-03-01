@@ -1,0 +1,5 @@
+<div id="songLengthLimitSettingBlock">
+    <label>Maximum length of entries into the queue (in seconds): </label>
+    <input type="number" name="length" id="songLengthLimitSetting" hx-post="/bridge/admin/settings/length"
+    hx-target="#songLengthLimitSettingBlock" hx-swap="outerHtml" hx-trigger="focusout changed" th:value="${lengthLimit}">
+</div>

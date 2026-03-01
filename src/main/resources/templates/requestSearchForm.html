@@ -1,0 +1,19 @@
+<form hx-get="/searchRequest" hx-swap="outerHTML">
+    <div id="searchRequestErrorAnchor"></div>
+    <span th:text="${resultMessage?:_}"></span>
+
+    <label for="searchQuery">Search for: </label>
+    <input type="text" name="searchQuery" id="searchQuery">
+
+    <div id="searchTypesDiv">
+        <label for="searchTypesDiv">This search is of type:</label>
+        <input type="radio" id="searchTypeText" name="searchType" value="TITLE" checked>
+        <label for="searchTypeText">Video Title</label>
+        <input type="radio" id="searchTypeId" name="searchType" value="VIDEO_ID">
+        <label for="searchTypeId">Video ID</label>
+        <input type="radio" id="searchTypeLink" name="searchType" value="LINK">
+        <label for="searchTypeLink">Video Link</label>
+    </div>
+
+    <input type="submit" value="Search">
+</form>

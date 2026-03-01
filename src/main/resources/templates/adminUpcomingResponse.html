@@ -1,0 +1,27 @@
+<div id="upcomingSongsAdminResponse">
+    <h5>Upcoming Songs:</h5>
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Requesting User</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="request : ${songData}" th:id="${'row-' + request.youtubeId()}" th:attr="hx-target=${'#row-' + request.youtubeId()}">
+            <td><span th:text="${request.fullName()}"></span></td>
+            <td><span th:text="${@userRepository.lookUpUsername(request.requestingUserId())}"></span></td>
+            <td><button hx-post="/bridge/admin/upcoming/moveUpOne" th:attrappend="hx-post=${'/' + request.youtubeId()}">️↑</button></td>
+            <td><button hx-post="/bridge/admin/upcoming/moveUpAll" th:attrappend="hx-post=${'/' + request.youtubeId()}">️️️↑↑↑</button></td>
+            <td><button hx-post="/bridge/admin/upcoming/moveDownOne" th:attrappend="hx-post=${'/' + request.youtubeId()}">️↓</button></td>
+            <td><button hx-post="/bridge/admin/upcoming/moveDownAll" th:attrappend="hx-post=${'/' + request.youtubeId()}">️↓↓↓</button></td>
+            <td><button hx-delete="/bridge/admin/upcoming/remove" hx-swap="outerHTML" th:attrappend="hx-delete=${'/' + request.youtubeId()}">️❌</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

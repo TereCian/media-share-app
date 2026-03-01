@@ -1,0 +1,4 @@
+<div id="remoteUrlSetting" hx-post="/settings/remoteUrl" hx-swap="outerHtml" hx-trigger="keyup" hx-include="#remoteUrlSettingInput">
+    <label for="remoteUrlSettingInput">URL of the public site: </label>
+    <input id="remoteUrlSettingInput" name="remoteUrl" th:value="${remoteUrl}">
+</div>

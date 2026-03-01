@@ -1,0 +1,18 @@
+  <table>
+    <thead>
+    <tr>
+      <th></th>
+      <th>Song Title</th>
+      <th>Requester</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="request : ${requestQueue}">
+      <td><img src="/static/nothumbnail.png" th:src="${request.thumbnailLink()}" width="80px"></td>
+      <td><span th:text="${request.fullName()}"></span></td>
+      <td><span th:text="${@userRepository.lookUpUsername(request.requestingUserId())}"></span></td>
+      <td th:if="${request.requestingUserId().equals(requestingUserUUID)}" hx-delete="/request" hx-swap="delete" hx-include="find input"><input type="hidden" name="songID" th:value="${request.youtubeId()}" th:id="${'songId' + request.youtubeId()}"><button>Delete This</button></td>
+    </tr>
+    </tbody>
+  </table>

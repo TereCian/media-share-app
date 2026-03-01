@@ -1,0 +1,8 @@
+<div id="remotePassResponse">
+    <form id="remotePassSetting" hx-post="/settings/remotePass" hx-swap="outerHtml" hx-target=#remotePassResponse hx-trigger="keyup changed delay:3s">
+        <label for="remotePass">Password for public site: </label>
+        <input id="remotePass" name="password" th:value="${remotePass}">
+    </form>
+    <button th:if="${isValidFormat}" hx-get="/bridge/admin/remoteSettings" hx-swap="afterend" hx-target="#remotePassResponse">Connect to public site</button>
+    <input id="remote" type="hidden" th:value="${remoteUrl}" name="remote">
+</div>

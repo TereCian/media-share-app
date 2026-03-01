@@ -1,0 +1,11 @@
+<div id="settings-div">
+    <h3>Player</h3>
+    <div hx-get="/display" hx-trigger="load" hx-swap="outerHTML"></div>
+
+    <h3>Settings</h3>
+    <h5>Changes to settings marked with a '*' do not take effect until the application is restarted</h5>
+
+    <div hx-get="/settings/resolution" hx-trigger="load" hx-swap="outerHTML"></div>
+    <div hx-get="/settings/remoteUrl" hx-trigger="load" hx-swap="outerHTML">remote url setting</div>
+    <div hx-get="/settings/remotePass" hx-trigger="load" hx-swap="outerHTML">remote password setting</div>
+</div>

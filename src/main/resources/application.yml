@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: media-share
+
+passwordHash: "$5$static$9osARifd4N22Cr9YOO.JllHs5dUmXWzb8b4UgbtXb18"

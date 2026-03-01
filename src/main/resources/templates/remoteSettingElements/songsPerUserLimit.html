@@ -1,0 +1,6 @@
+<div id="songPerUserLimitSettingBlock">
+    <label>Maximum simultaneous entries allowed per user: </label>
+    <input type="number" name="limit" id="songPerUserLimitSetting"  hx-post="/bridge/admin/settings/limit"
+           hx-include="#songPerUserLimitSetting" hx-target="#songPerUserLimitSettingBlock" hx-swap="outerHtml" hx-trigger="focusout changed"
+    th:value="${perUserLimit}">
+</div>

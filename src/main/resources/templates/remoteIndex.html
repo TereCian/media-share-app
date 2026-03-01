@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Share Requests</title>
+    <script src="/static/htmx.min.js"></script>
+</head>
+<body>
+    <div id="outerContainer">
+        <div hx-get="/user" hx-trigger="load" hx-swap="outerHTML">
+            User Area goes here
+        </div>
+        <div hx-get="/searchForm" hx-trigger="load" hx-swap="outerHTML">
+            Request Search goes here
+        </div>
+        <div hx-get="/queuePoller" hx-trigger="load" hx-swap="outerHTML">
+            Request queue goes here
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div hx-post="/settings/resolution" hx-swap="outerHTML" hx-trigger="change" hx-include="#resolutionSettings">
+    <label for="resolutionSettings">Video Resolution: </label>
+    <select id="resolutionSettings" name="resolution" hx-preserve>
+        <option th:selected="${currentValue == '144 p'}" value="144 p">144 x 256</option>
+        <option th:selected="${currentValue == '240 p'}"value="240 p">240 x 432</option>
+        <option th:selected="${currentValue == '360 p'}"value="360 p">360 x 640</option>
+        <option th:selected="${currentValue == '480 p'}"value="480 p">480 x 854</option>
+        <option th:selected="${currentValue == '720 p'}"value="720 p">720 x 1280</option>
+        <option th:selected="${currentValue == '1080 p'}"value="1080 p">1080 x 1920</option>
+    </select>
+</div>
