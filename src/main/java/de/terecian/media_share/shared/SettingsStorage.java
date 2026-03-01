@@ -16,7 +16,7 @@ import java.io.IOException;
 @Component
 public class SettingsStorage {
 
-    private static final String DEFUALT_SETTINGS_LOCATION = System.getProperty("user.home") + "/.mediarequest";
+    public static final String DEFAULT_SETTINGS_LOCATION = System.getProperty("user.home") + "/.mediarequest";
     private static final String SETTINGS_FILE_NAME = "settings.json";
     private static final String REMOTE_SETTINGS_FILE_NAME = "remote-settings.json";
     private final File storage;
@@ -26,7 +26,7 @@ public class SettingsStorage {
     public SettingsStorage(@Value("${application.media-share.settings-dir:}") String settingStorageLocation, ObjectMapper objectMapper) throws IOException {
         this.objectMapper = objectMapper;
         settingStorageLocation = (settingStorageLocation != null && !settingStorageLocation.isBlank()) ?
-                settingStorageLocation : DEFUALT_SETTINGS_LOCATION;
+                settingStorageLocation : DEFAULT_SETTINGS_LOCATION;
         File storageDir = new File(settingStorageLocation);
         if (!storageDir.exists()) {
             storageDir.mkdirs();
