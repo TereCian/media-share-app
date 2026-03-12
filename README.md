@@ -37,6 +37,8 @@ Upon first start of the app, you will also have to add the `-Dpassword=<password
 This password can then be entered through the configuration interface on the local half to access settings for the remote half.
 The password is hashed and saved to a file, so the password does not need to be re-entered when restarting the remote app.
 
+The remote website is then available under http://localhost:8081/index.
+
 ### Building the jar locally
 
 To build the jar yourself, you can use the bootJar gradle task.
